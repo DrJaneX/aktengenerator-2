@@ -1,0 +1,804 @@
+/* Report Editor Header */
+.report-editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #ecf0f1;
+}
+
+.report-editor-header h2 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 22px;
+}
+
+.btn-block-settings {
+  padding: 10px 16px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-block-settings:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+.btn-block-settings.active {
+  background-color: #e74c3c;
+}
+
+/* Block Selector Styles */
+.block-selector {
+  background-color: #f8f9fa;
+  border: 2px solid #3498db;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+.block-selector-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.block-selector-header h3 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 16px;
+}
+
+.btn-reset-blocks {
+  padding: 8px 14px;
+  background-color: #95a5a6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-size: 13px;
+}
+
+.btn-reset-blocks:hover {
+  background-color: #7f8c8d;
+  transform: translateY(-1px);
+}
+
+.block-selector-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.block-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background-color: white;
+  border: 2px solid #ecf0f1;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.block-checkbox:hover {
+  border-color: #3498db;
+  background-color: #f0f7ff;
+}
+
+.block-checkbox-input {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #3498db;
+}
+
+.block-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  color: #2c3e50;
+  cursor: pointer;
+  flex: 1;
+}
+
+.block-icon {
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.block-name {
+  font-size: 13px;
+}
+
+/* Flexible Block Container */
+.report-editor-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Allgemeine Block-Styles */
+.block {
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.block:hover {
+  border-color: #3498db;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.block-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f9fa;
+  padding: 15px 20px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.block-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  color: #2c3e50;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: default;
+}
+
+.block-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-block-toggle,
+.btn-block-remove {
+  padding: 6px 10px;
+  background-color: transparent;
+  color: #7f8c8d;
+  border: 1px solid #bdc3c7;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+.btn-block-toggle:hover {
+  background-color: #e8f4f8;
+  color: #2980b9;
+  border-color: #3498db;
+}
+
+.btn-block-remove:hover {
+  background-color: #ffe8e8;
+  color: #c0392b;
+  border-color: #e74c3c;
+}
+
+.block-content {
+  padding: 20px;
+}
+
+.block-input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ecf0f1;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+  transition: border-color 0.3s ease;
+  resize: vertical;
+}
+
+.block-input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.block-input:disabled {
+  background-color: #ecf0f1;
+  color: #7f8c8d;
+  cursor: not-allowed;
+}
+
+.block h3 {
+  margin: 0 0 15px 0;
+  color: #2c3e50;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.block h4 {
+  margin: 10px 0;
+  color: #34495e;
+  font-size: 14px;
+}
+
+/* Form Styles */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.form-grid .form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: #2c3e50;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Button Styles */
+.btn-add,
+.btn-save,
+.btn-cancel,
+.btn-remove,
+.btn-export {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.btn-add {
+  background-color: #27ae60;
+  color: white;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.btn-add:hover {
+  background-color: #229954;
+}
+
+.btn-save {
+  background-color: #3498db;
+  color: white;
+}
+
+.btn-save:hover {
+  background-color: #2980b9;
+}
+
+.btn-cancel {
+  background-color: #95a5a6;
+  color: white;
+}
+
+.btn-cancel:hover {
+  background-color: #7f8c8d;
+}
+
+.btn-remove {
+  background-color: #e74c3c;
+  color: white;
+  font-size: 12px;
+  padding: 6px 10px;
+  margin-top: 10px;
+}
+
+.btn-remove:hover {
+  background-color: #c0392b;
+}
+
+/* List Items */
+.injuries-list,
+.treatments-list,
+.medications-list {
+  margin-bottom: 15px;
+}
+
+.injury-item,
+.treatment-item,
+.medication-item {
+  background-color: #f8f9fa;
+  padding: 12px;
+  border-left: 3px solid #3498db;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.injury-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.severity-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.injury-location,
+.injury-description,
+.injury-treatment,
+.injury-progress,
+.treatment-date,
+.treatment-duration,
+.treatment-result,
+.treatment-notes,
+.medication-dosage,
+.medication-frequency,
+.medication-duration,
+.medication-sideEffects {
+  margin: 5px 0;
+  font-size: 13px;
+  color: #34495e;
+}
+
+.injury-progress label,
+.injury-healed {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  margin: 8px 0;
+}
+
+.injury-progress input[type='range'] {
+  flex: 1;
+  cursor: pointer;
+}
+
+/* Form Container */
+.form-container {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 4px;
+  margin-top: 15px;
+  border: 1px dashed #ddd;
+}
+
+.form-container h4 {
+  margin-top: 0;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.form-buttons button {
+  flex: 1;
+}
+
+/* Export Block */
+.export-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.btn-export {
+  padding: 12px 15px;
+  font-size: 14px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.btn-export-json {
+  background-color: #3498db;
+}
+
+.btn-export-json:hover {
+  background-color: #2980b9;
+}
+
+.btn-export-html {
+  background-color: #e67e22;
+}
+
+.btn-export-html:hover {
+  background-color: #d35400;
+}
+
+.export-info {
+  font-size: 12px;
+  color: #7f8c8d;
+  line-height: 1.6;
+}
+
+/* Checkbox Label */
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-weight: normal;
+}
+
+.checkbox-label input[type='checkbox'] {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+}
+
+/* Report Editor Styles */
+.report-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Template Selector Styles */
+.template-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.template-category {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.template-category-header {
+  font-size: 18px;
+  font-weight: 700;
+  padding: 12px 16px;
+  border-radius: 4px;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.template-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 15px;
+}
+
+.template-card {
+  border: 2px solid #ecf0f1;
+  border-radius: 6px;
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.template-card:hover {
+  border-color: #667eea;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+  transform: translateY(-2px);
+}
+
+.template-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 10px;
+}
+
+.template-card-name {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 15px;
+  flex: 1;
+}
+
+.template-severity {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  white-space: nowrap;
+  margin-left: 8px;
+}
+
+.severity-minimal {
+  background-color: #3498db;
+}
+
+.severity-light {
+  background-color: #2ecc71;
+}
+
+.severity-moderate {
+  background-color: #f39c12;
+}
+
+.severity-severe {
+  background-color: #e74c3c;
+}
+
+.severity-critical {
+  background-color: #c0392b;
+}
+
+.template-description {
+  color: #7f8c8d;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* Copy Paste Export Styles */
+.copy-paste-export {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 2px solid #ecf0f1;
+}
+
+.export-header {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2c3e50;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.export-preview {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  padding: 16px;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #2c3e50;
+  max-height: 300px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.export-preview::-webkit-scrollbar {
+  width: 8px;
+}
+
+.export-preview::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.export-preview::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.export-preview::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.btn-copy-paste {
+  padding: 12px 24px;
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-copy-paste:hover {
+  background-color: #229954;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-copy-paste.copied {
+  background-color: #16a085;
+}
+
+/* Medication Block Styles */
+.medication-input-section {
+  margin-bottom: 20px;
+}
+
+.medication-input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.medication-input {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #ecf0f1;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.medication-input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.btn-add-medication {
+  padding: 12px 16px;
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-add-medication:hover {
+  background-color: #229954;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+}
+
+.btn-add-medication:active {
+  transform: translateY(0);
+}
+
+.medication-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.medication-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  background-color: #ecf0f1;
+  border-radius: 4px;
+  border-left: 4px solid #3498db;
+  transition: all 0.3s ease;
+}
+
+.medication-item:hover {
+  background-color: #d5dbdb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.medication-name {
+  font-size: 14px;
+  color: #2c3e50;
+  font-weight: 500;
+  flex: 1;
+}
+
+.btn-remove-medication {
+  background-color: transparent;
+  color: #e74c3c;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.btn-remove-medication:hover {
+  background-color: #fadbd8;
+  color: #c0392b;
+}
+
+.medication-empty {
+  padding: 20px;
+  text-align: center;
+  color: #95a5a6;
+  font-style: italic;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  margin: 10px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .export-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .injury-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .severity-badge {
+    margin-top: 8px;
+  }
+
+  .template-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .export-preview {
+    font-size: 12px;
+    max-height: 400px;
+  }
+
+  .btn-copy-paste,
+  .btn-new-report,
+  .btn-manual {
+    width: 100%;
+  }
+}
