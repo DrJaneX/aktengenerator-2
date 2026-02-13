@@ -1,7 +1,5 @@
 # 🏥 Medic RP Aktengenerator v2
 
-Ein moderner, flexibler Aktengenerator für Medic RP auf StateV. Mit diesem Tool kannst du schnell und einfach medizinische Akten erstellen, verwalten und exportieren.
-
 ## ✨ Features
 
 ### 📋 Modulare Bausteine
